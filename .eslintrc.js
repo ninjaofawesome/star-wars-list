@@ -24,5 +24,9 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'spaced-comment': 1,
+    'no-use-before-define': 0,
+    'no-console': 1,
+    'no-param-reassign': 1,
   },
 };

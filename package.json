@@ -24,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "linter": "./node_modules/.bin/eslint src/*.ts"
+    "linter": "./node_modules/.bin/eslint src/*.ts --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
