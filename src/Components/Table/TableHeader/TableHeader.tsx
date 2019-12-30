@@ -1,11 +1,14 @@
 import React from 'react';
 import {
 	StyledTableHeader,
+	HeaderCell,
 } from './TableHeaderStyles';
 
 const TableHeader: React.FC = () => (
 	<StyledTableHeader>
-		Header content
+		<HeaderCell>
+			Content goes here
+		</HeaderCell>
 	</StyledTableHeader>
 );
 

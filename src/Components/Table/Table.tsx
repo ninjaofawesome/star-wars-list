@@ -17,10 +17,8 @@ interface TableProps {
 	allPeople: Array<Object>;
 }
 
-interface TableState {
-}
 
-class Table extends Component<TableProps, TableState> {
+class Table extends Component<TableProps, {}> {
 
 	componentDidMount() {
 	  this.props.fetchPeople();
@@ -50,8 +48,12 @@ class Table extends Component<TableProps, TableState> {
 	render() {
 		return (
 			<StyledTable>
-				<TableHeader />
-				{this.loadedContent()}
+				<thead>
+					<TableHeader />
+				</thead>
+				<tbody>
+					{this.loadedContent()}
+				</tbody>
 			</StyledTable>
 		);
 	}

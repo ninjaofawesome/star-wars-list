@@ -9,7 +9,7 @@ interface TableRowProps {
 	key?: string;
 }
 
-const TableRowMap = (entry: any) => {
+const TableRowCells = (entry: any) => {
 	if (entry=== undefined) {
 		return <TableCell key='TableCell-Loading'>Loading...</TableCell>
 	}
@@ -19,12 +19,12 @@ const TableRowMap = (entry: any) => {
 	})
 }
 const TableRow: React.FC<TableRowProps> = (
-		item: any,
-		key: number,
+		item,
+		key
 	) => {
 	return (
 		<StyledTableRow key={key}>
-			{TableRowMap(item.item)}
+			{TableRowCells(item.item)}
 		</StyledTableRow>
 	);
 }
