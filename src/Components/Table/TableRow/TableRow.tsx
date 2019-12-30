@@ -22,7 +22,6 @@ const TableRow: React.FC<TableRowProps> = (
 		item: any,
 		key: number,
 	) => {
-	console.log(TableRowMap(item.item))
 	return (
 		<StyledTableRow key={key}>
 			{TableRowMap(item.item)}

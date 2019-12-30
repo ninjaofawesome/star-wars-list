@@ -8,7 +8,6 @@ interface CellProps {
 }
 
 const TableCell: React.FC<CellProps> = (children: any) => {
-	console.log('children', children.children)
 	return (
 		<StyledTableCell>
 			{children.children}
