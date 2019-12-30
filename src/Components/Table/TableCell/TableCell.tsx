@@ -7,10 +7,13 @@ interface CellProps {
 	children?: any;
 }
 
-const TableCell: React.FC<CellProps> = (children) => (
-	<StyledTableCell>
-		{children}
-	</StyledTableCell>
-);
+const TableCell: React.FC<CellProps> = (children: any) => {
+	console.log('children', children.children)
+	return (
+		<StyledTableCell>
+			{children.children}
+		</StyledTableCell>
+	);
+}
 
 export default TableCell;

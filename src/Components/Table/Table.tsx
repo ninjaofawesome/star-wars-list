@@ -7,7 +7,6 @@ import { fetchPeople } from '../../Redux/Actions';
 
 // components
 import TableRow from './TableRow/TableRow';
-import TableCell from './TableCell/TableCell';
 import TableHeader from './TableHeader/TableHeader';
 import {
 	StyledTable,
@@ -31,24 +30,19 @@ class Table extends Component<TableProps, TableState> {
 		const { allPeople } = this.props;
 		if (allPeople.length > 0) {
 			return allPeople.map((person: any, index: number) => {
-				console.log('person', person)
 				return (
 					<TableRow 
 						key={`PersonTableRow-${index}`}
+						item={person}
 					>
-						<TableCell>{person.name}</TableCell>
-						<TableCell>{person.height}</TableCell>
-						<TableCell>{person.mass}</TableCell>
-						<TableCell>{person.hair_color}</TableCell>
 					</TableRow>
 				)
 			}
 		)
 		} else {
 			return(
-				<TableRow>
-					<TableCell>Loading...</TableCell>
-				</TableRow>
+				<TableRow />
+				
 			)
 		}
 	}
