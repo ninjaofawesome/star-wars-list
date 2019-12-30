@@ -3,9 +3,13 @@ import {
 	StyledTableCell,
 } from './TableCellStyles';
 
-const TableCell: React.FC = () => (
+interface CellProps {
+	children?: any;
+}
+
+const TableCell: React.FC<CellProps> = (children) => (
 	<StyledTableCell>
-		I am cell
+		{children}
 	</StyledTableCell>
 );
 

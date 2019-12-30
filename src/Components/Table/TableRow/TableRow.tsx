@@ -1,13 +1,18 @@
 import React from 'react';
-import TableCell from '../TableCell/TableCell';
 import {
 	StyledTableRow,
 } from './TableRowStyles';
 
-const TableRow: React.FC = () => (
-	<StyledTableRow>
-		<TableCell />
-	</StyledTableRow>
-);
+
+const TableRow: React.FC = (
+		children: any,
+		key: number,
+	) => {
+	return (
+		<StyledTableRow key={key}>
+			{children}
+		</StyledTableRow>
+	);
+}
 
 export default TableRow;
