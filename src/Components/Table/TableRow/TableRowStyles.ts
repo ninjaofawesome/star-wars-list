@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
 export const StyledTableRow = styled.tr`
-	display: block;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 `;

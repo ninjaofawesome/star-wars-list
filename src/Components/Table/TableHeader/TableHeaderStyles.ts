@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
-export const StyledTableHeader = styled.th`
+export const StyledTableHeader = styled.tr`
+	display: block;
+`;
+
+export const HeaderCell = styled.th`
 	display: block;
 `;

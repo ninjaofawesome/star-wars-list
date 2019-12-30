@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { FETCH_PEOPLE_SUCCESS } from '../Actions';
 
 const peopleState = {
   people: [],
@@ -6,6 +7,8 @@ const peopleState = {
 
 export const peopleReducer = (state = peopleState, action: any) => {
 	switch(action.type) {
+		case FETCH_PEOPLE_SUCCESS:
+			return Object.assign({}, state, { people: action.people });
 		default:
 			return state;
 	}

@@ -1,12 +1,14 @@
 import React from 'react';
-import TableCell from '../TableCell/TableCell';
 import {
 	StyledTableHeader,
+	HeaderCell,
 } from './TableHeaderStyles';
 
 const TableHeader: React.FC = () => (
 	<StyledTableHeader>
-		<TableCell />
+		<HeaderCell>
+			Content goes here
+		</HeaderCell>
 	</StyledTableHeader>
 );
 
