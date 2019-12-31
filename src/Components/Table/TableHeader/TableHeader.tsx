@@ -1,4 +1,6 @@
 import React from 'react';
+import UpButton from '../../Buttons/UpButton/UpButton';
+import DownButton from '../../Buttons/DownButton/DownButton';
 import {
 	StyledTableHeader,
 	HeaderCell,
@@ -11,6 +13,8 @@ const TableHeader: React.FC = () => {
 		<StyledTableHeader>
 			{labelArr.map((cellContent: string) => (
 				<HeaderCell>
+					<UpButton />
+					<DownButton />
 					{cellContent}
 				</HeaderCell>
 			))}
