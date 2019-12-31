@@ -10,21 +10,19 @@ interface TableRowProps {
 }
 
 const TableRowCells = (entry: any) => {
-	if (entry=== undefined) {
+	if (entry === undefined) {
 		return <TableCell key='TableCell-Loading'>Loading...</TableCell>
 	}
 
 	return Object.entries(entry).map((item: any, index: number) => {
 		return <TableCell key={`TableCell-${index}`}>{item[1]}</TableCell>
 	})
-}
-const TableRow: React.FC<TableRowProps> = (
-		item,
-		key
-	) => {
+};
+
+const TableRow: React.FC<TableRowProps> = (props) => {
 	return (
-		<StyledTableRow key={key}>
-			{TableRowCells(item.item)}
+		<StyledTableRow key={props.key}>
+			{TableRowCells(props.item)}
 		</StyledTableRow>
 	);
 }

@@ -7,9 +7,9 @@ interface CellProps {
 	children?: any;
 }
 
-const TableCell: React.FC<CellProps> = (children: any) => (
+const TableCell: React.FC<CellProps> = (props) => (
 	<StyledTableCell>
-		{children.children}
+		{props.children}
 	</StyledTableCell>
 );
 

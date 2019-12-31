@@ -4,12 +4,18 @@ import {
 	HeaderCell,
 } from './TableHeaderStyles';
 
-const TableHeader: React.FC = () => (
-	<StyledTableHeader>
-		<HeaderCell>
-			Content goes here
-		</HeaderCell>
-	</StyledTableHeader>
-);
+const labelArr = ['name', 'height', 'mass', 'eye color', 'hair color', 'created', 'edited'];
+
+const TableHeader: React.FC = () => {
+	return (
+		<StyledTableHeader>
+			{labelArr.map((cellContent: string) => (
+				<HeaderCell>
+					{cellContent}
+				</HeaderCell>
+			))}
+		</StyledTableHeader>
+	);
+}
 
 export default TableHeader;

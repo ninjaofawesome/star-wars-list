@@ -19,3 +19,6 @@ export const formatPeopleData = (data: any) => (
         });
     }) 
 );
+
+/* utility function to check if object and get entries */
+export const objEntries = (obj: any) => Object.entries(obj).length !== 0 && Object.entries(obj);
