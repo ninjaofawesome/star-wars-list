@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledDownButton = styled.button`
+export const StyledUpButton = styled.button`
 	display: block;
 	border: none;
 	background-color: transparent;
@@ -9,11 +9,12 @@ export const StyledDownButton = styled.button`
 	margin: 2px;
 `;
 
-export const DownButtonIcon = styled.div`
+export const UpButtonIcon = styled.div`
 	width: 0;
 	height: 0;
 	border-left: 5px solid transparent;
 	border-right: 5px solid transparent;
-	border-top: 10px solid red;
+	border-bottom: 10px solid red;
 `;
+
 
