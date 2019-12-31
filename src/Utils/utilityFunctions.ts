@@ -4,3 +4,18 @@ export const formattedDate = (newDate: any) => {
 	// // did not add a locale to this for international use purposes.
 	return(event.toLocaleDateString())
 };
+
+/* utility function to format data */
+export const formatPeopleData = (data: any) => (
+    data.map((item: any) => {
+        return({
+            name: item.name,
+            height: item.height,
+            mass: item.mass,
+            eye_color: item.eye_color,
+            hair_color: item.hair_color,
+            created: formattedDate(item.created),
+            edited: formattedDate(item.edited),
+        });
+    }) 
+);
