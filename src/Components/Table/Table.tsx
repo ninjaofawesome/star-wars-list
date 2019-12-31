@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 
 // utils
 import { fetchPeople } from '../../Redux/Actions';
+import { objEntries } from '../../Utils/utilityFunctions';
 
 // components
 import TableRow from './TableRow/TableRow';
@@ -24,25 +25,19 @@ class Table extends Component<TableProps, {}> {
 	  this.props.fetchPeople();
 	}
 
-	loadedContent() {
-		const { allPeople } = this.props;
-		if (allPeople.length > 0) {
-			return allPeople.map((person: any, index: number) => {
-				return (
-					<TableRow 
-						key={`PersonTableRow-${index}`}
-						item={person}
-					>
-					</TableRow>
-				)
-			}
-		)
-		} else {
-			return(
-				<TableRow />
-				
+	loading() {
+		return <TableRow />
+	}
+
+	tableRow() {
+		return (
+			this.props.allPeople.map((person: any, index: number) => (
+				<TableRow 
+					key={`PersonTableRow-${index}`}
+					item={person}
+				/>
 			)
-		}
+		))
 	}
 
 	render() {
@@ -52,7 +47,7 @@ class Table extends Component<TableProps, {}> {
 					<TableHeader />
 				</thead>
 				<tbody>
-					{this.loadedContent()}
+					{objEntries(this.props.allPeople) !== false ? this.tableRow() : this.loading()}
 				</tbody>
 			</StyledTable>
 		);
