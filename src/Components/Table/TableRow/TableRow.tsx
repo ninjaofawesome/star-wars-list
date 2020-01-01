@@ -1,5 +1,6 @@
 import React from 'react';
 import TableCell from '../TableCell/TableCell';
+import LoadingSpinner from '../../LoadingSpinner/LoadingSpinner';
 import {
 	StyledTableRow,
 } from './TableRowStyles';
@@ -10,13 +11,11 @@ interface TableRowProps {
 }
 
 const TableRowCells = (entry: any) => {
-	if (entry === undefined) {
-		return <TableCell key='TableCell-Loading'>Loading...</TableCell>
+	if (entry !== undefined) {
+		return Object.entries(entry).map((item: any, index: number) => {
+			return <TableCell key={`TableCell-${index}`}>{item[1]}</TableCell>
+		})
 	}
-
-	return Object.entries(entry).map((item: any, index: number) => {
-		return <TableCell key={`TableCell-${index}`}>{item[1]}</TableCell>
-	})
 };
 
 const TableRow: React.FC<TableRowProps> = (props) => {
