@@ -9,6 +9,7 @@ import { objEntries } from '../../Utils/utilityFunctions';
 // components
 import TableRow from './TableRow/TableRow';
 import TableHeader from './TableHeader/TableHeader';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import {
 	StyledTable,
 } from './TableStyles';
@@ -26,7 +27,7 @@ class Table extends Component<TableProps, {}> {
 	}
 
 	loading() {
-		return <TableRow />
+		return <LoadingSpinner />
 	}
 
 	tableRow() {
