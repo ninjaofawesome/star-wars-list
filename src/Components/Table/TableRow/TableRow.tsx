@@ -1,6 +1,5 @@
 import React from 'react';
 import TableCell from '../TableCell/TableCell';
-import LoadingSpinner from '../../LoadingSpinner/LoadingSpinner';
 import {
 	StyledTableRow,
 } from './TableRowStyles';

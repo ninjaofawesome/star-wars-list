@@ -13,9 +13,9 @@ const TableHeader: React.FC = () => {
 		<StyledTableHeader>
 			{labelArr.map((cellContent: string) => (
 				<HeaderCell>
-					<UpButton />
-					<DownButton />
-					{cellContent}
+					<UpButton sortType={cellContent} />
+					<DownButton sortType={cellContent} />
+					<span>{cellContent}</span>
 				</HeaderCell>
 			))}
 		</StyledTableHeader>

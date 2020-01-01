@@ -22,3 +22,19 @@ export const formatPeopleData = (data: any) => (
 
 /* utility function to check if object and get entries */
 export const objEntries = (obj: any) => Object.entries(obj).length !== 0 && Object.entries(obj);
+
+/* a string comparison function for use in sorting */
+
+export const compareStrings = (a: string, b: string) => {
+  // Use toUpperCase() to ignore character casing
+  const stringA = a.toUpperCase();
+  const stringB = b.toUpperCase();
+
+  let comparison = 0;
+  if (stringA > stringB) {
+    comparison = 1;
+  } else if (stringA < stringB) {
+    comparison = -1;
+  }
+  return comparison;
+}
