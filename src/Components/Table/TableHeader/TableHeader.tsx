@@ -11,8 +11,8 @@ const labelArr = ['name', 'height', 'mass', 'eye color', 'hair color', 'created'
 const TableHeader: React.FC = () => {
 	return (
 		<StyledTableHeader>
-			{labelArr.map((cellContent: string) => (
-				<HeaderCell>
+			{labelArr.map((cellContent: string, index: number) => (
+				<HeaderCell key={`HeaderCell-${index}`}>
 					<UpButton sortType={cellContent} />
 					<DownButton sortType={cellContent} />
 					<span>{cellContent}</span>

@@ -19,7 +19,7 @@ const TableRowCells = (entry: any) => {
 
 const TableRow: React.FC<TableRowProps> = (props) => {
 	return (
-		<StyledTableRow key={props.key}>
+		<StyledTableRow>
 			{TableRowCells(props.item)}
 		</StyledTableRow>
 	);
