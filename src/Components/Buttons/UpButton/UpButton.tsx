@@ -12,13 +12,21 @@ import {
 } from './UpButtonStyles';
 
 interface UpButtonProps {
-	sortType: string;
+	sortType: any;
+	sortAscending(data: string, arr: any): any;
+	allPeople: Array<Object>;
 }
 
 const UpButton: React.FC<UpButtonProps> = props => {
+	const {
+		sortType,
+		sortAscending,
+		allPeople,
+	} = props;
+
 	return (
 		<StyledUpButton
-			onClick={() => sortAscending(props.sortType)}
+			onClick={() => sortAscending(sortType, allPeople)}
 		>
 			<UpButtonIcon />
 		</StyledUpButton>
@@ -33,8 +41,8 @@ const mapStateToProps = (state: any) => {
 };
 
 const mapDispatchToProps = (dispatch: any) => bindActionCreators({
-    sortAscending: sortAscending,
+    sortAscending: (data, arr) => sortAscending(data, arr),
 }, dispatch);
 
-export default connect(mapStateToProps,mapDispatchToProps)(UpButton);
+export default connect(mapStateToProps, mapDispatchToProps)(UpButton);
 

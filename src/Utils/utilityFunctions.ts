@@ -25,16 +25,40 @@ export const objEntries = (obj: any) => Object.entries(obj).length !== 0 && Obje
 
 /* a string comparison function for use in sorting */
 
-export const compareStrings = (a: string, b: string) => {
-  // Use toUpperCase() to ignore character casing
-  const stringA = a.toUpperCase();
-  const stringB = b.toUpperCase();
+// export const compareStrings = (a: string, b: string) => {
+//   // Use toUpperCase() to ignore character casing
+//   const stringA = a.toUpperCase();
+//   const stringB = b.toUpperCase();
 
-  let comparison = 0;
-  if (stringA > stringB) {
-    comparison = 1;
-  } else if (stringA < stringB) {
-    comparison = -1;
-  }
-  return comparison;
+//   let comparison = 0;
+//   if (stringA > stringB) {
+//     comparison = 1;
+//   } else if (stringA < stringB) {
+//     comparison = -1;
+//   }
+//   return comparison;
+// }
+
+export const compareValues = (key: any, order = 'asc') => {
+  return function innerSort(a: any, b: any) {
+    if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+      // property doesn't exist on either object
+      return 0;
+    }
+
+    const varA = (typeof a[key] === 'string')
+      ? a[key].toUpperCase() : a[key];
+    const varB = (typeof b[key] === 'string')
+      ? b[key].toUpperCase() : b[key];
+
+    let comparison = 0;
+    if (varA > varB) {
+      comparison = 1;
+    } else if (varA < varB) {
+      comparison = -1;
+    }
+    return (
+      (order === 'desc') ? (comparison * -1) : comparison
+    );
+  };
 }
