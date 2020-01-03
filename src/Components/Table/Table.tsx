@@ -26,8 +26,8 @@ class Table extends Component<TableProps, {}> {
 	  this.props.fetchPeople();
 	}
 
-	loading() {
-		return <LoadingSpinner />
+	loadedContent() {
+		return objEntries(this.props.allPeople) !== false ? this.tableRow() : <LoadingSpinner />;
 	}
 
 	tableRow() {
@@ -48,7 +48,7 @@ class Table extends Component<TableProps, {}> {
 					<TableHeader />
 				</thead>
 				<tbody>
-					{objEntries(this.props.allPeople) !== false ? this.tableRow() : this.loading()}
+					{this.loadedContent()}
 				</tbody>
 			</StyledTable>
 		);
