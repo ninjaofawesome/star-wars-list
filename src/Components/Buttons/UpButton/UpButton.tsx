@@ -13,7 +13,7 @@ import {
 
 interface UpButtonProps {
 	sortType: any;
-	sortAscending(data: string, arr: any): any;
+	sortAscending(data: string, arr: Array<Object>): any;
 	allPeople: Array<Object>;
 }
 

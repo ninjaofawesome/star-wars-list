@@ -16,8 +16,7 @@ export const peopleReducer = (state = peopleState, action: any) => {
 		case SORT_ITEMS_ASCENDING:
 			return Object.assign({}, state, { people: action.data })
 		case SORT_ITEMS_DESCENDING:
-			console.log('desc', action);
-			return state;
+			return Object.assign({}, state, { people: action.data })
 		default:
 			return state;
 	}
