@@ -19,8 +19,12 @@ interface TableProps {
 	allPeople: Array<Object>;
 }
 
+interface TableState {
+	allPeople: Array<Object>;
+}
 
-class Table extends Component<TableProps, {}> {
+
+class Table extends Component<TableProps, TableState> {
 
 	componentDidMount() {
 	  this.props.fetchPeople();
@@ -42,6 +46,7 @@ class Table extends Component<TableProps, {}> {
 	}
 
 	render() {
+		console.log('props', this.props.allPeople)
 		return (
 			<StyledTable>
 				<thead>

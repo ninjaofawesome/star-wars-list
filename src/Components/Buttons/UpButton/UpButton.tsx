@@ -26,7 +26,7 @@ const UpButton: React.FC<UpButtonProps> = props => {
 
 	return (
 		<StyledUpButton
-			onClick={() => sortAscending(sortType, allPeople)}
+			onClick={() => sortAscending(sortType)}
 		>
 			<UpButtonIcon />
 		</StyledUpButton>
@@ -41,7 +41,7 @@ const mapStateToProps = (state: any) => {
 };
 
 const mapDispatchToProps = (dispatch: any) => bindActionCreators({
-    sortAscending: (data, arr) => sortAscending(data, arr),
+    sortAscending: (data) => sortAscending(data),
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(UpButton);
