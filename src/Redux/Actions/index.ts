@@ -1,8 +1,5 @@
 // utils
-import { 
-    formatPeopleData,
-    compareValues 
-} from '../../Utils/utilityFunctions';
+import { formatPeopleData } from '../../Utils/utilityFunctions';
 
 export const FETCH_PEOPLE_SUCCESS = 'FETCH_PEOPLE_SUCCESS';
 export const SORT_ITEMS_ASCENDING = 'SORT_ITEMS_ASCENDING';

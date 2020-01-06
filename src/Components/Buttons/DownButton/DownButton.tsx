@@ -13,15 +13,13 @@ import {
 
 interface DownButtonProps {
 	sortType: string;
-	sortDescending(data: string, arr: Array<Object>): any;
-	allPeople: Array<Object>;
+	sortDescending(data: string): any;
 }
 
 const DownButton: React.FC<DownButtonProps> = props => {
 	const {
 		sortType,
 		sortDescending,
-		allPeople,
 	} = props;
 	return (
 		<StyledDownButton

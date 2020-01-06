@@ -13,15 +13,13 @@ import {
 
 interface UpButtonProps {
 	sortType: any;
-	sortAscending(data: string, arr: Array<Object>): any;
-	allPeople: Array<Object>;
+	sortAscending(data: string): any;
 }
 
 const UpButton: React.FC<UpButtonProps> = props => {
 	const {
 		sortType,
 		sortAscending,
-		allPeople,
 	} = props;
 
 	return (

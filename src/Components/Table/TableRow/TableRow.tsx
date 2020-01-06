@@ -5,23 +5,24 @@ import {
 } from './TableRowStyles';
 
 interface TableRowProps {
-	item?: any;
-	key?: string;
+	people?: any;
 }
 
-const TableRowCells = (entry: any) => {
-	if (entry !== undefined) {
-		return Object.entries(entry).map((item: any, index: number) => {
-			return <TableCell key={`TableCell-${index}`}>{item[1]}</TableCell>
-		})
-	}
-};
+const TableRowCells = (entry: any) => (
+	Object.entries(entry).map((item: any, index: number) => (
+		<TableCell key={`TableCell-${index}`}>{item[1]}</TableCell>
+	))
+)
 
 const TableRow: React.FC<TableRowProps> = (props) => {
 	return (
-		<StyledTableRow>
-			{TableRowCells(props.item)}
-		</StyledTableRow>
+		props.people.map((item: any, index: number) => (
+			<StyledTableRow
+				key={`styledTableRow-${index}`}
+			>
+				{TableRowCells(item)}
+			</StyledTableRow>
+		))
 	);
 }
 

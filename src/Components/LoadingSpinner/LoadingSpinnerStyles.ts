@@ -33,7 +33,12 @@ export const StyledSpinner = styled.svg`
   }
 `;
 
-export const StyledSpinnerWrapper = styled.div`
+export const StyledSpinnerRow = styled.tr`
   display: block;
   margin: 20px auto;
+`;
+
+export const StyledSpinnerCell = styled.td`
+  display: block;
+  margin: 0 auto;
 `;

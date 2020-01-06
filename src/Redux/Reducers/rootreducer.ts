@@ -19,11 +19,9 @@ export const peopleReducer = (state = peopleState, action: any) => {
 			return Object.assign({}, state, { people: action.people });
 		case SORT_ITEMS_ASCENDING:
 			const ascArr = state.people.sort(compareValues(action.data));
-			console.log('asc', ascArr);
 			return Object.assign({}, state, { people: ascArr })
 		case SORT_ITEMS_DESCENDING:
 			const descArr = state.people.sort(compareValues(action.data, 'desc'));
-			console.log('desc', descArr)
 			return Object.assign({}, state, { people: descArr })
 		default:
 			return state;
