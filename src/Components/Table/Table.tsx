@@ -18,18 +18,24 @@ interface TableProps {
 	allPeople: Array<Object>;
 }
 
-interface TableState {
-	allPeople: Array<Object>;
-}
 
 
-class Table extends Component<TableProps, TableState> {
+class Table extends Component<TableProps> {
 
 	componentDidMount() {
 	  this.props.fetchPeople();
 	}
 
+	componentDidUpdate(prevProps: any) {
+	  	// Typical usage (don't forget to compare props):
+	  	if (this.props.allPeople[0] !== prevProps.allPeople[0]) {
+	  		return <TableRow people={this.props.allPeople} />
+	  	}
+	}
+
+
 	render() {
+		console.log("props", this.props.allPeople)
 		return (
 			<StyledTable>
 				<thead>
@@ -44,6 +50,7 @@ class Table extends Component<TableProps, TableState> {
 }
 
 const mapStateToProps = (state: any) => {
+	console.log('state', state.peopleReducer.people)
   return {
     allPeople: state.peopleReducer.people,
   }

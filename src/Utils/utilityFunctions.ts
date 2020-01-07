@@ -62,3 +62,7 @@ export const compareValues = (key: any, order = 'asc') => {
     );
   };
 }
+
+/* utility function to format data for reducer */
+export const formatData = (data: string) => (
+        (data === "eye color" || data === "hair color") ? data.replace(' ', "_") : data);

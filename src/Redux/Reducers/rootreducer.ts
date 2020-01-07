@@ -6,7 +6,8 @@ import {
 } from '../Actions'; 
 
 import { 
-    compareValues 
+    compareValues,
+    formatData, 
 } from '../../Utils/utilityFunctions';
 
 const peopleState = {
@@ -18,10 +19,12 @@ export const peopleReducer = (state = peopleState, action: any) => {
 		case FETCH_PEOPLE_SUCCESS:
 			return Object.assign({}, state, { people: action.people });
 		case SORT_ITEMS_ASCENDING:
-			const ascArr = state.people.sort(compareValues(action.data));
+			const ascFormattedData = formatData(action.data);
+			const ascArr = state.people.sort(compareValues(ascFormattedData));
 			return Object.assign({}, state, { people: ascArr })
 		case SORT_ITEMS_DESCENDING:
-			const descArr = state.people.sort(compareValues(action.data, 'desc'));
+			const descFormattedData = formatData(action.data);
+			const descArr = state.people.sort(compareValues(descFormattedData, 'desc'));
 			return Object.assign({}, state, { people: descArr })
 		default:
 			return state;
