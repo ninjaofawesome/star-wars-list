@@ -1,23 +1,26 @@
 import React from 'react';
 import {
 	StyledSpinner,
-	StyledSpinnerWrapper,
+	StyledSpinnerRow,
+	StyledSpinnerCell,
 } from './LoadingSpinnerStyles';
 
 const LoadingSpinner: React.FC = () => {
 	return (
-		<StyledSpinnerWrapper>
-			<StyledSpinner viewBox="0 0 50 50">
-			  <circle
-			    className="path"
-			    cx="25"
-			    cy="25"
-			    r="20"
-			    fill="none"
-			    strokeWidth="4"
-			  />
-			</StyledSpinner>
-		</StyledSpinnerWrapper>
+		<StyledSpinnerRow>
+			<StyledSpinnerCell>
+				<StyledSpinner viewBox="0 0 50 50">
+				  <circle
+				    className="path"
+				    cx="25"
+				    cy="25"
+				    r="20"
+				    fill="none"
+				    strokeWidth="4"
+				  />
+				</StyledSpinner>
+			</StyledSpinnerCell>
+		</StyledSpinnerRow>
 	);
 }
 

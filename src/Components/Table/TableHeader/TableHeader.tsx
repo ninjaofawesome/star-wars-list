@@ -6,15 +6,16 @@ import {
 	HeaderCell,
 } from './TableHeaderStyles';
 
+
 const labelArr = ['name', 'height', 'mass', 'eye color', 'hair color', 'created', 'edited'];
 
 const TableHeader: React.FC = () => {
 	return (
 		<StyledTableHeader>
-			{labelArr.map((cellContent: string) => (
-				<HeaderCell>
-					<UpButton />
-					<DownButton />
+			{labelArr.map((cellContent: string, index: number) => (
+				<HeaderCell key={`headerCell-${index}`}>
+					<UpButton sortType={cellContent} />
+					<DownButton sortType={cellContent} />
 					{cellContent}
 				</HeaderCell>
 			))}

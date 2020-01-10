@@ -17,7 +17,7 @@ interface Window {
 const store = createStore(
 	rootReducer,   
 	composeWithDevTools(
-	  applyMiddleware(thunk)),
+	applyMiddleware(thunk)),
 );
 
 ReactDOM.render(
