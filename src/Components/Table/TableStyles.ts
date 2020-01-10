@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledTable = styled.table`
-	display: block;
-	width: 100%;
+	display: inline-block;
 	margin: 0 auto;
 `;
