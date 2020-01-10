@@ -1,5 +1,9 @@
 // utils
-import { formatPeopleData } from '../../Utils/utilityFunctions';
+import { 
+    formatPeopleData,
+    compareValues,
+    formatData,
+} from '../../Utils/utilityFunctions';
 
 export const FETCH_PEOPLE_SUCCESS = 'FETCH_PEOPLE_SUCCESS';
 export const SORT_ITEMS_ASCENDING = 'SORT_ITEMS_ASCENDING';
@@ -17,12 +21,22 @@ export const fetchPeople = () => (
   }
 );
 
-export const sortAscending = (sortData: string) => ({
-    type: SORT_ITEMS_ASCENDING,
-    data: sortData,
-});
+export const sortAscending = (sortData: string, arr: Array<Object>) => {
+    const ascFormattedData = formatData(sortData);
+    const vals = compareValues(ascFormattedData)
+    const ascArr = [...arr].sort(vals);
+    return ({
+        type: SORT_ITEMS_DESCENDING,
+        sortBy: ascArr,
+    });
+};
 
-export const sortDescending = (sortData: string) => ({
-    type: SORT_ITEMS_DESCENDING,
-    sortBy: sortData,
-});
+export const sortDescending = (sortData: string, arr: Array<Object>) => {
+    const descFormattedData = formatData(sortData);
+    const vals = compareValues(descFormattedData, 'desc')
+    const descArr = [...arr].sort(vals);
+    return ({
+        type: SORT_ITEMS_DESCENDING,
+        sortBy: descArr,
+    });
+};

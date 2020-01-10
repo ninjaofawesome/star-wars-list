@@ -13,17 +13,19 @@ import {
 
 interface DownButtonProps {
 	sortType: string;
-	sortDescending(data: string): any;
+	sortDescending(data: string, arr: any): any;
+	allPeople?: Array<Object>;
 }
 
 const DownButton: React.FC<DownButtonProps> = props => {
 	const {
 		sortType,
 		sortDescending,
+		allPeople,
 	} = props;
 	return (
 		<StyledDownButton
-			onClick={() => sortDescending(sortType)}
+			onClick={() => sortDescending(sortType, allPeople)}
 		>
 			<DownButtonIcon />
 		</StyledDownButton>
@@ -37,7 +39,7 @@ const mapStateToProps = (state: any) => {
 };
 
 const mapDispatchToProps = (dispatch: any) => bindActionCreators({
-    sortDescending: (data) => sortDescending(data),
+    sortDescending: (data, arr) => sortDescending(data, arr),
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(DownButton);

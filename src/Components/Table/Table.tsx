@@ -26,23 +26,14 @@ class Table extends Component<TableProps> {
 	  this.props.fetchPeople();
 	}
 
-	componentDidUpdate(prevProps: any) {
-	  	// Typical usage (don't forget to compare props):
-	  	if (this.props.allPeople[0] !== prevProps.allPeople[0]) {
-	  		return <TableRow people={this.props.allPeople} />
-	  	}
-	}
-
-
 	render() {
-		console.log("props", this.props.allPeople)
 		return (
 			<StyledTable>
 				<thead>
 					<TableHeader />
 				</thead>
 				<tbody>
-					{this.props.allPeople.length > 0 ? <TableRow people={this.props.allPeople} /> : <LoadingSpinner />}
+					{this.props.allPeople.length > 0 ? <TableRow /> : <LoadingSpinner />}
 				</tbody>
 			</StyledTable>
 		);
@@ -50,7 +41,6 @@ class Table extends Component<TableProps> {
 }
 
 const mapStateToProps = (state: any) => {
-	console.log('state', state.peopleReducer.people)
   return {
     allPeople: state.peopleReducer.people,
   }

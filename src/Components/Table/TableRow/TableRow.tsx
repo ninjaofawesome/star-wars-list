@@ -1,11 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import TableCell from '../TableCell/TableCell';
 import {
 	StyledTableRow,
 } from './TableRowStyles';
 
 interface TableRowProps {
-	people?: any;
+	allPeople?: any;
 }
 
 const TableRowCells = (entry: any) => (
@@ -15,8 +16,9 @@ const TableRowCells = (entry: any) => (
 )
 
 const TableRow: React.FC<TableRowProps> = (props) => {
+	const { allPeople } = props;
 	return (
-		props.people.map((item: any, index: number) => (
+		allPeople.map((item: any, index: number) => (
 			<StyledTableRow
 				key={`styledTableRow-${index}`}
 			>
@@ -26,4 +28,10 @@ const TableRow: React.FC<TableRowProps> = (props) => {
 	);
 }
 
-export default TableRow;
+const mapStateToProps = (state: any) => {
+  return {
+    allPeople: state.peopleReducer.people,
+  }
+};
+
+export default connect(mapStateToProps)(TableRow);
