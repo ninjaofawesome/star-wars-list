@@ -2,7 +2,7 @@
 
 ## What is this?
 
-A Star Wars themed sortable list, made in React with Typescript.  You can see how I built it [Here](https://trello.com/c/wJPquBU5)
+A Star Wars themed sortable list, made in React with Typescript.  You can see how I built it [Here](https://trello.com/b/RcrzVscg/star-wars-list	)
 
 ## How I did it
 
