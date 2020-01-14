@@ -4,6 +4,7 @@ import DownButton from '../../Buttons/DownButton/DownButton';
 import {
 	StyledTableHeader,
 	HeaderCell,
+	StyledContentWrapper,
 } from './TableHeaderStyles';
 
 
@@ -16,7 +17,7 @@ const TableHeader: React.FC = () => {
 				<HeaderCell key={`headerCell-${index}`}>
 					<UpButton sortType={cellContent} />
 					<DownButton sortType={cellContent} />
-					{cellContent}
+					<StyledContentWrapper>{cellContent}</StyledContentWrapper>
 				</HeaderCell>
 			))}
 		</StyledTableHeader>
