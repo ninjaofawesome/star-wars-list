@@ -24,8 +24,7 @@ export const formatPeopleData = (data: any) => (
 export const objEntries = (obj: any) => Object.entries(obj).length !== 0 && Object.entries(obj);
 
 /* a string comparison function for use in sorting */
-
-export const compareValues = (key: any, order = 'asc') => {
+const compareValues = (key: any, order = 'asc') => {
 
   return function innerSort(a: any, b: any) {
     if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
@@ -53,5 +52,14 @@ export const compareValues = (key: any, order = 'asc') => {
 }
 
 /* utility function to format data for reducer */
-export const formatData = (data: string) => (
+const formatData = (data: string) => (
         (data === "eye color" || data === "hair color") ? data.replace(' ', "_") : data);
+
+export const sortArrayData = (sortString: string, arr: Array<Object>, order: string) => {
+
+  const ascFormattedData = formatData(sortString);
+  const vals = compareValues(ascFormattedData, order)
+  return [...arr].sort(vals);
+
+};
+
