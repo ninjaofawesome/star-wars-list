@@ -6,7 +6,4 @@ export const StyledTableRow = styled.tr`
 	justify-content: space-between;
 	align-items: center;
 	border-bottom: 1px solid ${colors.borderGray}
-	&:last-of-type{
-		border-bottom: none;
-	}
 `;
