@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors, sizes } from '../../Utils/constants';
 
 export const StyledSpinner = styled.svg`
   animation: rotate 2s linear infinite;
@@ -7,7 +8,7 @@ export const StyledSpinner = styled.svg`
   height: 50px;
   
   & .path {
-    stroke: red;
+    stroke: ${colors.red};
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
   }
@@ -35,7 +36,7 @@ export const StyledSpinner = styled.svg`
 
 export const StyledSpinnerRow = styled.tr`
   display: block;
-  margin: 20px auto;
+  margin: ${sizes.large} auto;
 `;
 
 export const StyledSpinnerCell = styled.td`
