@@ -31,11 +31,13 @@ const compareValues = (key: any, order = 'asc') => {
       // property doesn't exist on either object
       return 0;
     }
+    // checks if string is actually a string of numbers
+    const isNum = (val: string) => (/^\d+$/.test(val));
 
-    const varA = (typeof a[key] === 'string')
-      ? a[key].toUpperCase() : a[key];
-    const varB = (typeof b[key] === 'string')
-      ? b[key].toUpperCase() : b[key];
+    const varA = (typeof a[key] === 'string' && isNum(a[key]) === false)
+      ? a[key].toUpperCase() : parseInt(a[key], 10);
+    const varB = (typeof b[key] === 'string' && isNum(b[key]) === false)
+      ? b[key].toUpperCase() : parseInt(b[key], 10);
 
     let comparison = 0;
     if (varA > varB) {
