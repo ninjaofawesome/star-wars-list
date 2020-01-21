@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Page renders the page 1`] = `ShallowWrapper {}`;
