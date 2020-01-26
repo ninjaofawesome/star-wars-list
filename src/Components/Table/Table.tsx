@@ -42,7 +42,7 @@ class Table extends Component<TableProps> {
 
 const mapStateToProps = (state: any) => {
   return {
-    allPeople: state.peopleReducer.people,
+    allPeople: state.peopleReducer.people || [{}],
   }
 };
 
