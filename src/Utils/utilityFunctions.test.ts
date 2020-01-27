@@ -1,7 +1,6 @@
 import {
 	formattedDate,
 	formatPeopleData,
-	objEntries,
 	compareValues,
 	formatData,
 	sortArrayData,
@@ -13,7 +12,7 @@ describe('Utility function tests', () => {
 		expect(formattedDate(testCreatedDate)).toEqual('12/19/2014');
 	});
 
-	it('Should return a formatted object with the formatted data when the formatPeopleData is used', () => {
+	it('Should return a formatted array of objects with the necessary data when the formatPeopleData is used', () => {
 		const objectArr = [
 			{
 				"name": "Luke Skywalker",
@@ -59,4 +58,5 @@ describe('Utility function tests', () => {
 				"edited": "12/29/2014"
 		}]);
 	});
+
 })
