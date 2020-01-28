@@ -18,8 +18,6 @@ interface TableProps {
 	allPeople: Array<Object>;
 }
 
-
-
 class Table extends Component<TableProps> {
 
 	componentDidMount() {

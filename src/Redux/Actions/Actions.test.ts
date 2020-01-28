@@ -1,6 +1,8 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
+import { shallow } from 'enzyme';
 import { testArr } from '../../Utils/testingUtils';
+import Table from '../../Components/Table/Table';
 
 import { 
     formatPeopleData,
@@ -11,31 +13,17 @@ import {
     fetchPeople,
     sortAscending,
     sortDescending,
-} from './index';
+} from './Actions';
 
 const mockStore = configureStore([]);
 
 describe('Action Tests', () => {
-    beforeEach(() => {
-        const initialState = { people: [] };
-        const store = mockStore(initialState);
-        const actions = store.getActions();
-    })
-
     it('should load the formatted api info on page load', () => {
-        store.distpatch(fetchPeople());
-
-        const expectedRobotPayload = {
-            type: FETCH_PEOPLE_SUCCESS,
-            people: formatPeopleData(data.results)
-        };
-
-        expect(actions).toEqual(expectedPayload);
+        /* todo: something like this: https://medium.com/@rishabhsrao/mocking-and-testing-fetch-with-jest-c4d670e2e167 */
     });
 
     it('should load ascending data on button click', () => {
-        console.log('store', store);
-        console.log('actions', actions)
+
     });
 
     it('should load descending data on button click', () => {
