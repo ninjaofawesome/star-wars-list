@@ -19,7 +19,15 @@ const mockStore = configureStore([]);
 
 describe('Action Tests', () => {
     it('should load the formatted api info on page load', () => {
-        /* todo: something like this: https://medium.com/@rishabhsrao/mocking-and-testing-fetch-with-jest-c4d670e2e167 */
+        const initialState = { people: [] };
+        const store = mockStore(initialState);
+        store.dispatch(fetchPeople());
+        const actions = store.getActions();
+        const peoplePayload = [{
+            type: FETCH_PEOPLE_SUCCESS,
+            people: formatPeopleData(data.results)
+        }];
+        expect(actions).toEqual(peoplePayload);
     });
 
     it('should load ascending data on button click', () => {
