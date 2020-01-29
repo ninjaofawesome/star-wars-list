@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // actions
-import { sortDescending } from '../../../Redux/Actions';
+import { sortDescending } from '../../../Redux/Actions/Actions';
 
 // styles
 import {

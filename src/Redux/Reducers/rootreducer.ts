@@ -3,7 +3,7 @@ import {
 	FETCH_PEOPLE_SUCCESS,
 	SORT_ITEMS_ASCENDING,
 	SORT_ITEMS_DESCENDING, 
-} from '../Actions'; 
+} from '../Actions/Actions'; 
 
 const peopleState = {
   people: [],

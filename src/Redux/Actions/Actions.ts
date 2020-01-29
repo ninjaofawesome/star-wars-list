@@ -20,10 +20,10 @@ export const fetchPeople = () => (
   }
 );
 
-export const sortAscending = (sortData: string, arr: Array<Object>) => {
+export const sortAscending = (sortData?: string, arr?: Array<Object>) => {
     const ascArr = sortArrayData(sortData, arr, 'asc');
     return ({
-        type: SORT_ITEMS_DESCENDING,
+        type: SORT_ITEMS_ASCENDING,
         sortBy: ascArr,
     });
 };

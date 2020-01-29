@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // utils
-import { fetchPeople } from '../../Redux/Actions';
+import { fetchPeople } from '../../Redux/Actions/Actions';
 
 // components
 import TableRow from './TableRow/TableRow';
@@ -17,8 +17,6 @@ interface TableProps {
 	fetchPeople(): any;
 	allPeople: Array<Object>;
 }
-
-
 
 class Table extends Component<TableProps> {
 
