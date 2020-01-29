@@ -23,10 +23,31 @@ describe('Action Tests', () => {
     });
 
     it('should load ascending data on button click', () => {
+        const initialState = { people: testArr }
+        const store = mockStore(initialState);
 
+        store.dispatch(sortAscending('name', testArr));
+        const actions = store.getActions();
+        const ascArr = sortArrayData('name', testArr, 'asc');
+        const expectedAscPayload = [{ 
+            type: 'SORT_ITEMS_ASCENDING',
+            sortBy: ascArr,
+        }];
+        expect(actions).toEqual(expectedAscPayload);
     });
 
     it('should load descending data on button click', () => {
+        const initialState = { people: testArr }
+        const store = mockStore(initialState);
+
+        store.dispatch(sortDescending('name', testArr));
+        const actions = store.getActions();
+        const descArr = sortArrayData('name', testArr, 'desc');
+        const expectedDescPayload = [{ 
+            type: 'SORT_ITEMS_DESCENDING',
+            sortBy: descArr,
+        }];
+        expect(actions).toEqual(expectedDescPayload);
 
     });
 });
