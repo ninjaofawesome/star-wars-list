@@ -28,10 +28,20 @@ describe('people reducer tests', () => {
 	});
 
 	it('should handle SORT_ITEMS_ASCENDING', () => {
-		// handle sorting ascending people state
+		const successAscState = {
+			type: FETCH_PEOPLE_SUCCESS,
+			people: testArrAsc,
+		}
+		expect(peopleReducer({people: testArr}, successAscState)).toEqual({people: testArrAsc})
 	});
 
 	it('should handle SORT_ITEMS_DESCENDING', () => {
-		// handle sorting descending people state
+		// hard to test when there are only two objects
+		const successDescState = {
+			type: FETCH_PEOPLE_SUCCESS,
+			people: testArr,
+		}
+		expect(peopleReducer({people: testArr}, successDescState)).toEqual({people: testArr})
+
 	});
 })
