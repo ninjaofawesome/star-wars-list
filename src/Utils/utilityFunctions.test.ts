@@ -1,4 +1,8 @@
-import { testArr } from './testingUtils';
+import { 
+	testArr, 
+	testArrAsc,
+	testArrDesc
+} from './testingUtils';
 import {
 	formattedDate,
 	formatPeopleData,
@@ -59,26 +63,7 @@ describe('Utility function tests', () => {
 	});
 
 	it('should format arrays of object by name string in ascending order', () => {
-		expect(sortArrayData("name", testArr, "asc")).toStrictEqual([
-			{
-			  "name": "C-3PO",
-			  "height": "167",
-			  "mass": "75",
-			  "eye_color": "yellow",
-			  "hair_color": "n/a",
-			  "created": "12/10/2014",
-			  "edited": "12/20/2014",
-			},
-			{
-			  "name": "Luke Skywalker",
-			  "height": "172",
-			  "mass": "77",
-			  "eye_color": "blue",
-			  "hair_color": "blond",
-			  "created": "12/19/2014",
-			  "edited": "12/20/2014",
-			},
-		]);
+		expect(sortArrayData("name", testArr, "asc")).toStrictEqual(testArrAsc);
 	});
 
 	it('should format arrays of object by mass number in ascending order', () => {
@@ -101,11 +86,29 @@ describe('Utility function tests', () => {
 			  "created": "12/19/2014",
 			  "edited": "12/20/2014",
 			},
+			{
+			  "name":"Darth Vader",
+			  "height":"202",
+			  "mass":"136",
+			  "eye_color":"yellow",
+			  "hair_color":"none",
+			  "created":"12/10/2014",
+			  "edited":"12/20/2014",
+			},
 		]);
 	});
 
 	it('should format arrays of object by mass number in descending order', () => {
 		expect(sortArrayData("mass", testArr, "desc")).toStrictEqual([
+			{
+			  "name":"Darth Vader",
+			  "height":"202",
+			  "mass":"136",
+			  "eye_color":"yellow",
+			  "hair_color":"none",
+			  "created":"12/10/2014",
+			  "edited":"12/20/2014",
+			},
 			{
 			  "name": "Luke Skywalker",
 			  "height": "172",
@@ -123,7 +126,7 @@ describe('Utility function tests', () => {
 			  "hair_color": "n/a",
 			  "created": "12/10/2014",
 			  "edited": "12/20/2014",
-			},	
+			},
 		]);
 	});
 
@@ -137,6 +140,15 @@ describe('Utility function tests', () => {
 			  "hair_color": "n/a",
 			  "created": "12/10/2014",
 			  "edited": "12/20/2014",
+			},
+			{
+			  "name":"Darth Vader",
+			  "height":"202",
+			  "mass":"136",
+			  "eye_color":"yellow",
+			  "hair_color":"none",
+			  "created":"12/10/2014",
+			  "edited":"12/20/2014",
 			},
 			{
 			  "name": "Luke Skywalker",
