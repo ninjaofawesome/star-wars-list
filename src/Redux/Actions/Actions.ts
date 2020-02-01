@@ -20,7 +20,7 @@ export const fetchPeople = () => (
   }
 );
 
-export const sortAscending = (sortData?: string, arr?: Array<Object>) => {
+export const sortAscending = (sortData = '', arr=[{}]) => {
     const ascArr = sortArrayData(sortData, arr, 'asc');
     return ({
         type: SORT_ITEMS_ASCENDING,
@@ -28,7 +28,7 @@ export const sortAscending = (sortData?: string, arr?: Array<Object>) => {
     });
 };
 
-export const sortDescending = (sortData: string, arr: Array<Object>) => {
+export const sortDescending = (sortData = '', arr=[{}]) => {
     const descArr = sortArrayData(sortData, arr, 'desc');
     return ({
         type: SORT_ITEMS_DESCENDING,
