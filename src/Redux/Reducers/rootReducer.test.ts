@@ -10,7 +10,7 @@ import {
 	testArr,
 	testArrAsc,
  } from '../../Utils/testingUtils';
-import { peopleReducer } from './rootreducer';
+import { peopleReducer } from './rootReducer';
 
 describe('people reducer tests', () => {
 	const mockState = { people: []};
