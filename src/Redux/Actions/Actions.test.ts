@@ -1,7 +1,11 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import { shallow } from 'enzyme';
-import { testArr } from '../../Utils/testingUtils';
+import { 
+    testArr,
+    mockData,
+} from '../../Utils/testingUtils';
 import Table from '../../Components/Table/Table';
 
 import { 
@@ -10,24 +14,45 @@ import {
 } from '../../Utils/utilityFunctions';
 
 import { 
+    FETCH_PEOPLE_SUCCESS,
+    SORT_ITEMS_ASCENDING,
+    SORT_ITEMS_DESCENDING, 
+} from './Actions'; 
+
+import { 
     fetchPeople,
     sortAscending,
     sortDescending,
 } from './Actions';
 
-const mockStore = configureStore([]);
+const mockStore = configureStore([thunk]);
+
+const success = () => {
+  return {
+    type: 'FETCH_PEOPLE_SUCCESS',
+    people: formatPeopleData(mockData),
+  }
+}
+
+const fetchData = () => {
+  return dispatch => {
+    return fetch('https://swapi.co/api/people') // Some async action with promise
+      .then(() => dispatch(success()))
+  };
+}
+
 
 describe('Action Tests', () => {
+    
     it('should load the formatted api info on page load', () => {
-        const initialState = { people: [] };
-        const store = mockStore(initialState);
-        store.dispatch(fetchPeople());
-        const actions = store.getActions();
-        const peoplePayload = [{
-            type: FETCH_PEOPLE_SUCCESS,
-            people: formatPeopleData(data.results)
-        }];
-        expect(actions).toEqual(peoplePayload);
+      const initialState = { people: [] };
+      const store = mockStore(initialState)
+
+      return store.dispatch(fetchData())
+        .then(() => {
+          const actions = store.getActions()
+          expect(actions[0]).toEqual(success())
+        })
     });
 
     it('should load ascending data on button click', () => {
