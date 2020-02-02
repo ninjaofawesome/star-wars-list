@@ -8,15 +8,15 @@ A Star Wars themed sortable list, made in React with Typescript, complete with t
 
 I invite you to check out the commit history on this repo for a more detailed background on what I did and when.  Also included are any pain points that I experienced along the way.  
 
-But, the TL:DR; is that I created actions and modeled my reducers around loading the data, then sorting the data in ascending order or descending order.  Additionally, I created a set of basic styled table elements and a handful of utility functions to help make my life easier.
+But, the TL:DR; is that I created actions that passed along the formatted data from the API, modeled my reducers around loading the data, and housed it all in a few simple presentation components.  Additionally, I created a handful of utility functions to help make my life easier that reorganize a lot of the data for me.
 
-Next, I tested some of the components, actions and reducers with Jest and Enzyme. My goals for this was to ensure that the components render as anticipated, the actions fire as anticipated and the reducers behave as anticipated.  Additionally, I tested the utility functions because they do quite a bit of the heavy lifting in this app to format and sort data.
+Next, I tested some of the utility functions, components, actions and reducers with Jest and Enzyme. My goals for this was to ensure that the components render as anticipated, the actions fire as anticipated and the reducers behave as anticipated.  Additionally, I tested the utility functions because they do quite a bit of the heavy lifting in this app to format and sort data.
 
-Additionally, the original sort function that I used in this project was from [here](https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/).  It worked excellently for sorting strings in an ascending or descending order, but not for numbers. My contributions was to thinker with it to sort both.
+Also to note, the original sort function that I used in this project was from [here](https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/).  It worked excellently for sorting strings in an ascending or descending order, but not for numbers. My contributions was to tinker with it to sort both.
 
 ## Challenges
 
-The largest challenge that I had in this project was that at some point my view was not updating when I clicked the ascending or descending buttons.  I'm not entirely sure why this was happening, but my best guesses would have been that I was either trying to pass a function in through the object in the actions, or there was some sort of race condition going on, or that I was trying to return mutated data.  The quick fix answer was to clone the array of data that I was using and additionally assign the functions to format said data into arrays, but I still don't *fully* grasp what the solve was for in this.
+The largest challenge that I had in this project was that at some point my view was not updating when I clicked the ascending or descending buttons.  I'm not entirely sure why this was happening, but my best guesses would have been that I was either trying to pass a function in through the object in the actions, or there was some sort of race condition going on, or that I was trying to return mutated data in a way that the view didn't like.  The quick fix answer was to clone the array of data that I was using and additionally assign the functions to format said data into arrays, but I still don't *fully* grasp what the solve was for in this.
 
 Also, getting the redux devtools to work as anticipated was a bit of a pain as well in typescript- I was getting error after error that I wasn't defining types properly and in the proper spots, but I eventually figured it out after googling a bit.
 
